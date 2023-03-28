@@ -194,7 +194,6 @@ function start_simple_tuner() {
         if (!streamRunning) return;
         if (!time) time = performance.now();
         else {
-            // console.log('Time: ', performance.now() - time);
             time = performance.now();
         }
 
@@ -526,13 +525,13 @@ class HarmonicSeries {
                 const harmonic = (firstNote.pitch * j) / octave;
                 const foundNote = Note.getNote(harmonic);
                 if (!root) {
-                    console.log('root', foundNote, j);
+                    // console.log('root', foundNote, j);
                     root = foundNote;
                     lastJ = j;
                     continue;
                 }
                 if (root.getInterval(foundNote) == interval) {
-                    console.log('found', foundNote);
+                    // console.log('found', foundNote);
                     const cents = Note.getCents(foundNote.pitch, harmonic);
                     if (harmonics.length > 0 && harmonics.includes(cents)) {
                         threshold--;
